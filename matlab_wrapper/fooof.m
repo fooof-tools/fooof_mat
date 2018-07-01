@@ -31,7 +31,7 @@
 function fooof_results = fooof(freqs, psd, f_range, settings)
 
     % Check settings - get defaults for those not provided
-    settings = fooof_settings(settings);
+    settings = fooof_check_settings(settings);
 
     % Convert inputs
     freqs = py.numpy.array(freqs);
@@ -51,6 +51,6 @@ function fooof_results = fooof(freqs, psd, f_range, settings)
     
     % Extract outputs
     fooof_results = fm.get_results();
-    fooof_results = fooof_results(fooof_results);
+    fooof_results = fooof_unpack_results(fooof_results);
     
 end

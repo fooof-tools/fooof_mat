@@ -1,6 +1,6 @@
 % Unpack fooof_results python object into matlab struct
 
-function results_out = fooof_results(results_in)
+function results_out = fooof_unpack_results(results_in)
 
     results_out = struct();
     
