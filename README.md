@@ -64,6 +64,6 @@ If you're on mac, 'command line' means terminal - after installing anaconda, jus
 
 ## Potential Matlab Implementation
 
-The above workflows still use the Python implementation of FOOOF. This has some perks, in that running the exact same code means that there are no worries about maintaining and verying the consistency between multiple implementations. However, it does still require the somewhat annoying coordinating between languages, if one wants to use Matlab. The only way to get around this would be to have re-implemenation of the algorithm in Matlab, in which case it could be used in a stand-alone manner. 
+The above workflows still use the Python implementation of FOOOF. This has some perks, in that running the exact same code means that there are no worries about maintaining and verying the consistency between multiple implementations of the code. However, it does still require this somewhat annoying coordinating between languages, if one wants to use Matlab. The only way to get around this would be to have a re-implemenation of the algorithm in Matlab, in which case it could be used in a stand-alone manner. 
 
-As of right now, there are no plans for a full re-implementation from us of the algorithm in Matlab from us - it's non-trivial to re-write, test, confirm equivalence, and then continuously maintain two versions. That said, the code is open, so if want to try and do this yourself, go for it!
+As of right now, there are no plans for us to a full re-implementation of the algorithm in Matlab - it's non-trivial to re-write, test, confirm equivalence, and then continuously maintain two versions. That said, the code is open, so if want to try and do this yourself, go for it!
