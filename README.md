@@ -6,9 +6,33 @@ Here we offer some support materials for using [FOOOF](https://github.com/voytek
 
 The Matlab wrapper, in 'matlab_wrapper' is some Matlab code, that calls the Python implementation of FOOOF. This requires that you have Python & FOOOF installed, but does not require you to ever use or write Python code yourself. 
 
-To try this, clone or download this 
+To try this, clone or download this repository, and then use the the provided matlab code to run FOOOF. The only function you need to run is 'fooof.m', which has documentation on inputs and outputs.
 
 Note that this is a very minimal wrapper - it provides access only to the core algorithm, and not to any of extra utilities, such as plotting model outputs. As the algorithm is really the purpose of FOOOF, you are not lacking any functionality in that sense - all the inputs settings and model outputs are available to you.
+
+#### Dependencies
+
+This Matlab wrapper uses the Python support introduced by Matlab in 2014b, and as such requires that version, or higher, to run.
+
+#### pyversion
+
+Once you have downloaded Python, you shouldn't need to do anything for Matlab to be able to call Python - as long as your Matlab is using the correct Python. If it's not working, this is likely the problem.
+
+You can run `pyversion` to see which Python you are using. Note that you must do this _after installing Python and FOOOF_ (instruction to do so below).
+```
+% Check which python is being used. 
+pyversion
+
+% The print out from above should tell you which Python you are calling
+%  It should show that you are using Python version 3.6.
+%  It should also show that the 'home' of this python is in the anaconda folder
+%  If either of these things are not right, reset which Python you are using, as below
+
+% Set python version to use
+%  Note: you must do this first thing after opening Matlab (relaunch if you need to)
+%  You should only ever have to run this at most, once. 
+pyversion('/anaconda/bin/python')
+```
 
 ## Matlab -> Python -> Matlab
 
