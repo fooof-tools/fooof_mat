@@ -1,6 +1,16 @@
-# Matlab support for running FOOOF
+# Matlab Support for Using FOOOF
 
-Here we offer some support materials for using [FOOOF](https://github.com/voytekresearch/fooof) as a Matlab user. Note that the current options offered here still use the Python implementation, and so do require a working Python install - but that should be easy to do, and instructions are provided below to do so. 
+This repository offers support materials and utilities for using [FOOOF](https://github.com/voytekresearch/fooof) with Matlab. All [descriptions](https://github.com/voytekresearch/fooof/README.md) and [tutorials](https://github.com/voytekresearch/fooof/tutorial) for FOOOF are in the [main repository](https://github.com/voytekresearch/fooof), and a full description of the method is available in the [paper](https://www.biorxiv.org/content/early/2018/04/11/299859).
+
+There are two workflows offered here for using FOOOF with Matlab - a Matlab Wrapper, and a Matlab->Python->Matlab workflow. Note that these options both still use the Python implementation under the hood, and so do require a working Python install - but that should be easy to do, and instructions are provided below to do so. 
+
+### Reference
+
+If you use this code in your project, please cite:
+
+    Haller M, Donoghue T, Peterson E, Varma P, Sebastian P, Gao R, Noto T, Knight RT, Shestyuk A,
+    Voytek B (2018) Parameterizing Neural Power Spectra. bioRxiv, 299859.
+    doi: https://doi.org/10.1101/299859
 
 ## Matlab Wrapper
 
