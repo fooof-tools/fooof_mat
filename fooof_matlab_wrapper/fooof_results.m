@@ -1,3 +1,5 @@
+% Unpack fooof_results python object into matlab struct
+
 function results_out = fooof_results(results_in)
 
     results_out = struct();
@@ -16,6 +18,7 @@ function results_out = fooof_results(results_in)
     results_out.error = ...
         double(py.array.array('d', py.numpy.nditer(results_in.error)));
     
+    % Note: for reasons unknown, r_squared seems to come out as float...
     results_out.r_squared = results_in.r_squared;
     %results_out.r_squared = ...
     %    double(py.array.array('d', py.numpy.nditer(results_in.r_squared)));

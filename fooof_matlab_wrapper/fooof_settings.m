@@ -1,6 +1,8 @@
+% Check fooof settings, provided as a struct
+%   Any settings not specified are set to default values
+
 function settings = fooof_settings(settings)
 
-    % Settings - set to defaults if not provided
     if ~exist('settings.peak_width_limits')
         settings.peak_width_limits = [0.5, 12];
     end
