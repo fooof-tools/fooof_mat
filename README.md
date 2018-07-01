@@ -1,14 +1,48 @@
-# Matlab support for running FOOOF
+# Matlab Support for Using FOOOF
 
-Here we offer some support materials for using [FOOOF](https://github.com/voytekresearch/fooof) as a Matlab user. Note that the current options offered here still use the Python implementation, and so do require a working Python install - but that should be easy to do, and instructions are provided below to do so. 
+This repository offers support materials and utilities for using [FOOOF](https://github.com/voytekresearch/fooof) with Matlab. All [descriptions](https://github.com/voytekresearch/fooof/README.md) and [tutorials](https://github.com/voytekresearch/fooof/tutorial) for FOOOF are in the [main repository](https://github.com/voytekresearch/fooof), and a full description of the method is available in the [paper](https://www.biorxiv.org/content/early/2018/04/11/299859).
+
+There are two workflows offered here for using FOOOF with Matlab - a Matlab Wrapper, and a Matlab->Python->Matlab workflow. Note that these options both still use the Python implementation under the hood, and so do require a working Python install - but that should be easy to do, and instructions are provided below to do so. 
+
+### Reference
+
+If you use this code in your project, please cite:
+
+    Haller M, Donoghue T, Peterson E, Varma P, Sebastian P, Gao R, Noto T, Knight RT, Shestyuk A,
+    Voytek B (2018) Parameterizing Neural Power Spectra. bioRxiv, 299859.
+    doi: https://doi.org/10.1101/299859
 
 ## Matlab Wrapper
 
 The Matlab wrapper, in 'matlab_wrapper' is some Matlab code, that calls the Python implementation of FOOOF. This requires that you have Python & FOOOF installed, but does not require you to ever use or write Python code yourself. 
 
-To try this, clone or download this 
+To try this, clone or download this repository, and then use the the provided matlab code to run FOOOF. The only function you need to run is 'fooof.m', which has documentation on inputs and outputs.
 
 Note that this is a very minimal wrapper - it provides access only to the core algorithm, and not to any of extra utilities, such as plotting model outputs. As the algorithm is really the purpose of FOOOF, you are not lacking any functionality in that sense - all the inputs settings and model outputs are available to you.
+
+#### Dependencies
+
+This Matlab wrapper uses the Python support introduced by Matlab in 2014b, and as such requires that version, or higher, to run.
+
+#### pyversion
+
+Once you have downloaded Python, you shouldn't need to do anything for Matlab to be able to call Python - as long as your Matlab is using the correct Python. If it's not working, this is likely the problem.
+
+You can run `pyversion` to see which Python you are using. Note that you must do this _after installing Python and FOOOF_ (instruction to do so below).
+```
+% Check which python is being used. 
+pyversion
+
+% The print out from above should tell you which Python you are calling
+%  It should show that you are using Python version 3.6.
+%  It should also show that the 'home' of this python is in the anaconda folder
+%  If either of these things are not right, reset which Python you are using, as below
+
+% Set python version to use
+%  Note: you must do this first thing after opening Matlab (relaunch if you need to)
+%  You should only ever have to run this at most, once. 
+pyversion('/anaconda/bin/python')
+```
 
 ## Matlab -> Python -> Matlab
 
@@ -40,6 +74,6 @@ If you're on mac, 'command line' means terminal - after installing anaconda, jus
 
 ## Potential Matlab Implementation
 
-The above workflows still use the Python implementation of FOOOF. This has some perks, in that running the exact same code means that there are no worries about maintaining and verying the consistency between multiple implementations. However, it does still require the somewhat annoying coordinating between languages, if one wants to use Matlab. The only way to get around this would be to have re-implemenation of the algorithm in Matlab, in which case it could be used in a stand-alone manner. 
+The above workflows still use the Python implementation of FOOOF. This has some perks, in that running the exact same code means that there are no worries about maintaining and verying the consistency between multiple implementations of the code. However, it does still require this somewhat annoying coordinating between languages, if one wants to use Matlab. The only way to get around this would be to have a re-implemenation of the algorithm in Matlab, in which case it could be used in a stand-alone manner. 
 
-As of right now, there are no plans for a full re-implementation from us of the algorithm in Matlab from us - it's non-trivial to re-write, test, confirm equivalence, and then continuously maintain two versions. That said, the code is open, so if want to try and do this yourself, go for it!
+As of right now, there are no plans for us to a full re-implementation of the algorithm in Matlab - it's non-trivial to re-write, test, confirm equivalence, and then continuously maintain two versions. That said, the code is open, so if want to try and do this yourself, go for it!
