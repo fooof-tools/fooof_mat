@@ -2,7 +2,7 @@
 
 This repository offers support materials and utilities for using [FOOOF](https://github.com/voytekresearch/fooof) with Matlab. All [descriptions](https://github.com/voytekresearch/fooof/README.md) and [tutorials](https://github.com/voytekresearch/fooof/tutorial) for FOOOF are in the [main repository](https://github.com/voytekresearch/fooof), and a full description of the method is available in the [paper](https://www.biorxiv.org/content/early/2018/04/11/299859).
 
-There are two workflows offered here for using FOOOF with Matlab - a Matlab Wrapper, and a Matlab->Python->Matlab workflow. Note that these options both still use the Python implementation under the hood, and so do require a working Python install - but that should be easy to do, and instructions are provided below to do so. 
+There are two approaches offered here for using FOOOF with Matlab - a Matlab Wrapper, and a Matlab->Python->Matlab workflow. Note that these options both still use the Python implementation under the hood, and so do require a working Python install - but that should be easy to do, and instructions are provided below to do so. 
 
 ### Reference
 
@@ -62,7 +62,7 @@ To install Python, as well as all the dependencies you need and including tools 
 
 Note that your computer may well have a version of Python - but you should still go an install a new one with Anaconda - this ensures that you have all the dependencies you need, and leaves your system Python alone, for safety.
 
-Once you've downloaded Anaconda, you will have a program called 'Anaconda Navigator', which you can use to launch Juypter notebooks, if you want.
+Once you've downloaded Anaconda, you will have a program called 'Anaconda Navigator', which you can use to launch Juypter notebooks, if you want. For more information on using notebooks, check out [project Jupyter](http://jupyter.org).
 
 #### Install FOOOF
 
@@ -76,4 +76,4 @@ If you're on mac, 'command line' means terminal - after installing anaconda, jus
 
 The above workflows still use the Python implementation of FOOOF. This has some perks, in that running the exact same code means that there are no worries about maintaining and verying the consistency between multiple implementations of the code. However, it does still require this somewhat annoying coordinating between languages, if one wants to use Matlab. The only way to get around this would be to have a re-implemenation of the algorithm in Matlab, in which case it could be used in a stand-alone manner. 
 
-As of right now, there are no plans for us to a full re-implementation of the algorithm in Matlab - it's non-trivial to re-write, test, confirm equivalence, and then continuously maintain two versions. That said, the code is open, so if want to try and do this yourself, go for it!
+As of right now, there are no plans on our end for a full re-implementation of the algorithm in Matlab - it's non-trivial to re-write, test, confirm equivalence, and then continuously maintain two versions. That said, the code is open, so if want to try and do this yourself, go for it!
