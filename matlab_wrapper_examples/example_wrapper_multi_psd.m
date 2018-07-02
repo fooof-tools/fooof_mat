@@ -17,14 +17,8 @@ freqs = freqs';
 settings = struct();
 f_range = [1, 50];
 
-% Initialize object to collect FOOOF results
-outputs = [];
-
-% Run FOOOF
-for psd = psds
-    fooof_results = fooof(freqs, psd', f_range, settings);
-    outputs = [outputs, fooof_results];
-end
+% Run FOOOF across a group of power spectra
+fooof_results = fooof_group(freqs, psds, f_range, settings);
 
 % Check out the FOOOF Results
-outputs
+fooof_results
