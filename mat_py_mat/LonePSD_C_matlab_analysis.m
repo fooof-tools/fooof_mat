@@ -1,7 +1,7 @@
 %% Load and Analyze FOOOF Results in Matlab
 
 % Load FOOOF results
-fooof_results = load('fooof_results');
+fooof_results = load('fooof_results.mat');
 
 % Check out FOOOF results
 fooof_results
