@@ -16,9 +16,9 @@ If you use this code in your project, please cite:
 
 The Matlab wrapper, in 'matlab_wrapper' is some Matlab code, that calls the Python implementation of FOOOF. This requires that you have Python & FOOOF installed, but does not require you to ever use or write Python code yourself. 
 
-To try this, clone or download this repository, and then use the the provided matlab code to run FOOOF. The only function you need to run is 'fooof.m', which has documentation on inputs and outputs.
+To use the wrapper, first install Python & FOOOF - there are instructions to do so below. Then clone or download this repository, and then use the the provided matlab code to run FOOOF. The only function you need to run is 'fooof.m', which has documentation on inputs and outputs.
 
-Note that this is a very minimal wrapper - it provides access only to the core algorithm, and not to any of extra utilities, such as plotting model outputs. As the algorithm is really the purpose of FOOOF, you are not lacking any functionality in that sense - all the inputs settings and model outputs are available to you.
+Note that this is a very minimal wrapper - it provides access only to the core algorithm, and not to any of the extra utilities, such as plotting the model outputs. As the algorithm is really the purpose of FOOOF, you are not lacking any functionality in that sense - all the inputs settings and model outputs are available to you.
 
 #### Dependencies
 
