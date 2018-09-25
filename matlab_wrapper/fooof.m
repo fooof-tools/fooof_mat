@@ -49,8 +49,8 @@ function fooof_results = fooof(freqs, psd, f_range, settings)
     % Run FOOOF fit
     fm.fit(freqs, psd, f_range)
 
-    
     % Extract outputs
-    fooof_results = fooof_unpack_results(fm);
+    fooof_results = fm.get_results();
+    fooof_results = fooof_unpack_results(fooof_results);
     
 end
