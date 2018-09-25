@@ -51,6 +51,9 @@ function fooof_plot(fooof_results, log_freqs)
     %   Note: the '4' is magical and mysterious. No idea. 
     model.Color(4) = 0.5;
     
+    grid on
+    legend('Original Spectrum', 'Full Model Fit', 'Aperiodic Fit')
+    
     hold off
 
 end
