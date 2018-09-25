@@ -1,3 +1,8 @@
+% fooof_version() - Get FOOOF version information, of both Python & Wrapper.
+%
+% Usage:
+%   >> fooof_version()
+
 function fooof_version()
 
     % Get the version of the Python implementation of FOOOf being used

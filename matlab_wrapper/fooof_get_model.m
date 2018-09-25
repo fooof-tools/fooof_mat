@@ -1,9 +1,29 @@
-% Get the actual fit model from a FOOOF object
-function model_out = fooof_get_model(fm)
+% fooof_get_model() - Return the model fit values from a FOOOF object
+%
+% Usage:
+%   >> model_fit = fooof_get_model(fm)
+%
+% Inputs:
+%   fm              = FOOOF object
+%
+% Outputs:
+%   model_fit       = model results, in  a struct, including:
+%       model_fit.freqs
+%       model_fit.power_spectrum
+%       model_fit.fooofed_spectrum
+%       model_fit.bg_fit
+%
+% Notes
+%   This function is mostly an internal function, but can be called 
+%     directly by the user if you are interacting with FOOOF objects
+%     directly. 
 
-    model_out = struct();
+% Get the actual fit model from a FOOOF object
+function model_fit = fooof_get_model(fm)
+
+    model_fit = struct();
     
-    model_out.freqs = double(py.array.array('d',fm.freqs));
-    model_out.power_spectrum = double(py.array.array('d', fm.power_spectrum));
-    model_out.fooofed_spectrum = double(py.array.array('d', fm.fooofed_spectrum_));
-    model_out.bg_fit = double(py.array.array('d', py.getattr(fm, '_bg_fit')));
+    model_fit.freqs = double(py.array.array('d',fm.freqs));
+    model_fit.power_spectrum = double(py.array.array('d', fm.power_spectrum));
+    model_fit.fooofed_spectrum = double(py.array.array('d', fm.fooofed_spectrum_));
+    model_fit.bg_fit = double(py.array.array('d', py.getattr(fm, '_bg_fit')));

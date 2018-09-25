@@ -1,4 +1,23 @@
-% Unpack fooof_results python object into matlab struct
+% fooof_unpack_results() - Extract model fit results from FOOOFResults.
+%
+% Usage:
+%   >> results_out = fooof_unpack_results(fooof_results);
+%
+% Inputs:
+%   fooof_results   = FOOOFResults object
+% Outputs:
+%   results_out     = fooof model results, in a struct, including:
+%       results_out.background_params
+%       results_out.peak_params
+%       results_out.gaussian_params
+%       results_out.error
+%       results_out.r_squared
+%
+% Notes:
+%   This function is mostly an internal function, and doesn't need to be
+%   called directly by the user - but can be if you are interacting
+%   directly with FOOOF objects. 
+
 function results_out = fooof_unpack_results(results_in)
 
     results_out = struct();
