@@ -1,6 +1,8 @@
 % Unpack fooof_results python object into matlab struct
 function results_out = fooof_unpack_results(results_in)
 
+    results_out = struct();
+
     results_out.background_params = ...
         double(py.array.array('d', results_in.background_params));
     
