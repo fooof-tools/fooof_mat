@@ -14,7 +14,7 @@ function settings = fooof_check_settings(settings)
     
     % Overwrite any non-existent of nan settings with defaults
     for field = fieldnames(defaults)'
-        if ~isfield(settings, field) || isnan(settings.(field{1}))
+        if ~isfield(settings, field) || all(isnan(settings.(field{1})))
             settings.(field{1}) = defaults.(field{1});
         end
     end
