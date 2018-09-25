@@ -14,6 +14,7 @@
 %       settings.peak_threshold
 %       settings.background_mode
 %       settings.verbose
+%   return_model    = boolean of whether to return actual model, optional 
 %
 % Outputs:
 %   fooof_results   = fooof model ouputs, in a struct, including:
@@ -28,7 +29,7 @@
 %     provided as set to default values. To run with all defaults, 
 %     input settings as an empty struct. 
 
-function fooof_results = fooof(freqs, psd, f_range, settings)
+function fooof_results = fooof(freqs, psd, f_range, settings, return_model)
 
     % Check settings - get defaults for those not provided
     settings = fooof_check_settings(settings);
@@ -52,5 +53,17 @@ function fooof_results = fooof(freqs, psd, f_range, settings)
     % Extract outputs
     fooof_results = fm.get_results();
     fooof_results = fooof_unpack_results(fooof_results);
+    
+    % Also return the actual model fit, if requested
+    %   This will default to not return model, if variable not set
+    if exist('return_model', 'var') && return_model
+        
+        % Get the model, and add outputs to foof_results
+        model_out = fooof_get_model(fm);
+        for field = fieldnames(model_out)'
+            fooof_results.(field{1}) = model_out.(field{1});
+        end
+        
+    end
     
 end
