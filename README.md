@@ -1,8 +1,12 @@
-# Matlab Support for Using FOOOF
+# FOOOF - Matlab Wrapper
 
-This repository offers support materials and utilities for using [FOOOF](https://github.com/voytekresearch/fooof) with Matlab. All [descriptions](https://github.com/voytekresearch/fooof/README.md) and [tutorials](https://github.com/voytekresearch/fooof/tutorial) for FOOOF are in the [main repository](https://github.com/voytekresearch/fooof), and a full description of the method is available in the [paper](https://www.biorxiv.org/content/early/2018/04/11/299859).
+This repository offers a Matlab wrapper for [FOOOF](https://github.com/fooof-tools/fooof) with Matlab.
 
-There are two approaches offered here for using FOOOF with Matlab - a Matlab Wrapper, and a Matlab->Python->Matlab workflow. Note that these options both still use the Python implementation under the hood, and so do require a working Python install - but that should be easy to do, and instructions are provided below to do so. 
+All [descriptions](https://github.com/fooof-tools/fooof/README.md) and [tutorials](https://github.com/fooof-tools/fooof/tutorial) for FOOOF are in the [main repository](https://github.com/fooof-tools/fooof), and a full description of the method is available in the [paper](https://www.biorxiv.org/content/early/2018/04/11/299859).
+
+This repository describes the Matlab wrapper, in which you call the Python implemnetation of FOOOF from Matlab, never having to interact directly with Python. An alternative approach is to use a primarily
+
+There are two approaches offered here for using FOOOF with Matlab - a Matlab Wrapper, and a Matlab->Python->Matlab workflow. Note that these options both still use the Python implementation under the hood, and so do require a working Python install - but that should be easy to do, and instructions are provided below to do so.
 
 ### Reference
 
@@ -12,9 +16,9 @@ If you use this code in your project, please cite:
     Voytek B (2018) Parameterizing Neural Power Spectra. bioRxiv, 299859.
     doi: https://doi.org/10.1101/299859
 
-## Matlab Wrapper
+## FOOOF_MAT
 
-The Matlab wrapper, in 'matlab_wrapper' is some Matlab code, that calls the Python implementation of FOOOF. This requires that you have Python & FOOOF installed, but does not require you to ever use or write Python code yourself. 
+The Matlab wrapper, is Matlab code that calls the Python implementation of FOOOF. This requires that you have Python & FOOOF installed, but does not require you to ever use or write Python code yourself.
 
 To use the wrapper, first install Python & FOOOF - there are instructions to do so below. Then clone or download this repository, and then use the the provided matlab code to run FOOOF. The only function you need to run is 'fooof.m', which has documentation on inputs and outputs.
 
@@ -30,7 +34,7 @@ Once you have downloaded Python, you shouldn't need to do anything for Matlab to
 
 You can run `pyversion` to see which Python you are using. Note that you must do this _after installing Python and FOOOF_ (instruction to do so below).
 ```
-% Check which python is being used. 
+% Check which python is being used.
 pyversion
 
 % The print out from above should tell you which Python you are calling
@@ -40,17 +44,9 @@ pyversion
 
 % Set python version to use
 %  Note: you must do this first thing after opening Matlab (relaunch if you need to)
-%  You should only ever have to run this at most, once. 
+%  You should only ever have to run this at most, once.
 pyversion('/anaconda/bin/python')
 ```
-
-## Matlab -> Python -> Matlab
-
-Since you need to install Python anyways, another potential workflow is to do all of your processing and analysis in Matlab, up to and including calculating power spectra, which you then save out to mat files. You can then load these files in Python, run and explore FOOOF, then save out the model fit results, that can be loaded back into Matlab, if you prefer. 
-
-The benefit of this approach, over using the wrapper, is that you have full access to the FOOOF module in Python, which makes it easier to use utilities to plot outputs and see what's happening. 
-
-An example / template workflow for using this approach, including matlab and python scriptys, is available in 'mat_py_mat'. With this template, you should be able get working with this workflow without having to write almost any Python code. 
 
 ## Installing Python & FOOOF
 
@@ -70,10 +66,10 @@ FOOOF can be installed through pip, meaning you just have to run the following f
 
 `pip install fooof`
 
-If you're on mac, 'command line' means terminal - after installing anaconda, just copy the above command into the terminal, and it should work. If you're on windows, you will need to run this in 'anaconda command prompt' which is basically a command line specifically for managing Python with Anaconda. 
+If you're on mac, 'command line' means terminal - after installing anaconda, just copy the above command into the terminal, and it should work. If you're on windows, you will need to run this in 'anaconda command prompt' which is basically a command line specifically for managing Python with Anaconda.
 
 ## Potential Matlab Implementation
 
-The above workflows still use the Python implementation of FOOOF. This has some perks, in that running the exact same code means that there are no worries about maintaining and verying the consistency between multiple implementations of the code. However, it does still require this somewhat annoying coordinating between languages, if one wants to use Matlab. The only way to get around this would be to have a re-implemenation of the algorithm in Matlab, in which case it could be used in a stand-alone manner. 
+The above workflows still use the Python implementation of FOOOF. This has some perks, in that running the exact same code means that there are no worries about maintaining and verying the consistency between multiple implementations of the code. However, it does still require this somewhat annoying coordinating between languages, if one wants to use Matlab. The only way to get around this would be to have a re-implemenation of the algorithm in Matlab, in which case it could be used in a stand-alone manner.
 
 As of right now, there are no plans on our end for a full re-implementation of the algorithm in Matlab - it's non-trivial to re-write, test, confirm equivalence, and then continuously maintain two versions. That said, the code is open, so if want to try and do this yourself, go for it!
