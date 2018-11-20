@@ -45,6 +45,7 @@ pyversion
 % Set python version to use
 %  Note: you must do this first thing after opening Matlab (relaunch if you need to)
 %  You should only ever have to run this at most, once.
+%  Note: you're anaconda folder might be `anaconda3` instead of `anaconda`
 pyversion('/anaconda/bin/python')
 ```
 
