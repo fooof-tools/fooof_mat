@@ -4,7 +4,7 @@ This repository offers a Matlab wrapper for [FOOOF](https://github.com/fooof-too
 
 All [descriptions](https://github.com/fooof-tools/fooof/README.md) and [tutorials](https://github.com/fooof-tools/fooof/tutorial) for FOOOF are in the [main repository](https://github.com/fooof-tools/fooof), and a full description of the method is available in the [paper](https://www.biorxiv.org/content/early/2018/04/11/299859).
 
-This repository describes the Matlab wrapper, in which you call the Python implemnetation of FOOOF from Matlab, never having to interact directly with Python. An alternative approach is to use a primarily
+This repository describes the Matlab wrapper, in which you call the Python implementation of FOOOF from Matlab, never having to interact directly with Python. An alternative approach is to use a primarily
 
 There are two approaches offered here for using FOOOF with Matlab - a Matlab Wrapper, and a Matlab->Python->Matlab workflow. Note that these options both still use the Python implementation under the hood, and so do require a working Python install - but that should be easy to do, and instructions are provided below to do so.
 
