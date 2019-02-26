@@ -23,37 +23,37 @@ function fooof_plot(fooof_results, log_freqs)
     else
         plt_freqs = fooof_results.freqs;
     end
-    
+
     % Plot settings
     lw = 2.5;
-    
+
     %% Create the Plots
-    
+
     figure()
     hold on
     % Plot the original data
     data = plot(plt_freqs, fooof_results.power_spectrum, 'black');
-    
+
     % Plot the full model fit
     model = plot(plt_freqs, fooof_results.fooofed_spectrum, 'red');
 
-    
-    % Plot the background fit
-    bg_fit = plot(plt_freqs, fooof_results.bg_fit, 'b--');
-    
+
+    % Plot the aperiodic fit
+    ap_fit = plot(plt_freqs, fooof_results.ap_fit, 'b--');
+
     %% Plot Settings
-    
+
     % Apply general plot settings
-    for plt = [data, model, bg_fit]
+    for plt = [data, model, ap_fit]
         set(plt, 'LineWidth', lw);
-        
+
     % Set alpha value for model - in a wonky way, because Matlab
-    %   Note: the '4' is magical and mysterious. No idea. 
+    %   Note: the '4' is magical and mysterious. No idea.
     model.Color(4) = 0.5;
-    
+
     grid on
     legend('Original Spectrum', 'Full Model Fit', 'Aperiodic Fit')
-    
+
     hold off
 
 end

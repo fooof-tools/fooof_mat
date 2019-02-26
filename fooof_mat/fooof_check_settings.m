@@ -9,7 +9,7 @@
 %       settings.max_n_peaks
 %       settings.min_peak_amplitude
 %       settings.peak_threshold
-%       settings.background_mode
+%       settings.aperiodic_mode
 %       settings.verbose
 %
 % Returns:
@@ -18,11 +18,11 @@
 %       settings.max_n_peaks
 %       settings.min_peak_amplitude
 %       settings.peak_threshold
-%       settings.background_mode
+%       settings.aperiodic_mode
 %       settings.verbose
 
 % Notes:
-%   This is a helper function, probably not called directly by the user. 
+%   This is a helper function, probably not called directly by the user.
 %   Any settings not specified are set to default values
 
 function settings = fooof_check_settings(settings)
@@ -33,9 +33,9 @@ function settings = fooof_check_settings(settings)
         'max_n_peaks', Inf, ...
         'min_peak_amplitude', 0.0, ...
         'peak_threshold', 2.0, ...
-        'background_mode', 'fixed', ...
+        'aperiodic_mode', 'fixed', ...
         'verbose', true);
-    
+
     % Overwrite any non-existent of nan settings with defaults
     for field = fieldnames(defaults)'
         if ~isfield(settings, field) || all(isnan(settings.(field{1})))
