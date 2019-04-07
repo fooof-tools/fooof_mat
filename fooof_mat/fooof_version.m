@@ -14,7 +14,7 @@ function fooof_version()
 
     % Set the version number of the matlab wrapper
     %   Note: this is where version is defined for this wrapper
-    fooof_wrapper_version = "0.1.0";
+    fooof_wrapper_version = "0.1.1";
 
     % Display versions
     disp('Current version of FOOOF:     ' + fooof_py_version)
