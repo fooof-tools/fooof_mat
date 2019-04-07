@@ -10,7 +10,7 @@
 %   settings        = fooof model settings, in a struct, including:
 %       settings.peak_width_limts
 %       settings.max_n_peaks
-%       settings.min_peak_amplitude
+%       settings.min_peak_height
 %       settings.peak_threshold
 %       settings.aperiodic_mode
 %       settings.verbose
