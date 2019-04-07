@@ -14,15 +14,13 @@
 %       model_fit.bg_fit
 %
 % Notes
-%   This function is mostly an internal function, but can be called 
-%     directly by the user if you are interacting with FOOOF objects
-%     directly. 
+%   This function is mostly an internal function.
+%     It can be called directly by the user if you are interacting with FOOOF objects directly.
 
-% Get the actual fit model from a FOOOF object
 function model_fit = fooof_get_model(fm)
 
     model_fit = struct();
-    
+
     model_fit.freqs = double(py.array.array('d',fm.freqs));
     model_fit.power_spectrum = double(py.array.array('d', fm.power_spectrum));
     model_fit.fooofed_spectrum = double(py.array.array('d', fm.fooofed_spectrum_));

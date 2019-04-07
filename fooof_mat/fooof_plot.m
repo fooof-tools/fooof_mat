@@ -13,47 +13,49 @@
 function fooof_plot(fooof_results, log_freqs)
 
     %% Data Checking
+
     if ~isfield(fooof_results, 'freqs')
        error('FOOOF results struct does not contain model output.')
     end
 
     %% Set Up
+
     if exist('log_freqs', 'var') && log_freqs
         plt_freqs = log10(fooof_results.freqs);
     else
         plt_freqs = fooof_results.freqs;
     end
-    
+
     % Plot settings
     lw = 2.5;
-    
-    %% Create the Plots
-    
+
+    %% Create the plots
+
     figure()
     hold on
+
     % Plot the original data
     data = plot(plt_freqs, fooof_results.power_spectrum, 'black');
-    
+
     % Plot the full model fit
     model = plot(plt_freqs, fooof_results.fooofed_spectrum, 'red');
 
-    
     % Plot the background fit
     bg_fit = plot(plt_freqs, fooof_results.bg_fit, 'b--');
-    
-    %% Plot Settings
-    
+
+    %% Plot settings
+
     % Apply general plot settings
     for plt = [data, model, bg_fit]
         set(plt, 'LineWidth', lw);
-        
+
     % Set alpha value for model - in a wonky way, because Matlab
-    %   Note: the '4' is magical and mysterious. No idea. 
+    %   Note: the '4' is magical and mysterious. No idea.
     model.Color(4) = 0.5;
-    
+
     grid on
     legend('Original Spectrum', 'Full Model Fit', 'Aperiodic Fit')
-    
+
     hold off
 
 end
