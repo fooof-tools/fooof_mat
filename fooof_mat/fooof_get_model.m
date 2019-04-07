@@ -14,11 +14,9 @@
 %       model_fit.ap_fit
 %
 % Notes
-%   This function is mostly an internal function, but can be called
-%     directly by the user if you are interacting with FOOOF objects
-%     directly.
+%   This function is mostly an internal function.
+%     It can be called directly by the user if you are interacting with FOOOF objects directly.
 
-% Get the actual fit model from a FOOOF object
 function model_fit = fooof_get_model(fm)
 
     model_fit = struct();

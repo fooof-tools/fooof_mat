@@ -1,7 +1,11 @@
-% fooof_version() - Get FOOOF version information, of both Python & Wrapper.
+% fooof_version() - Get FOOOF version information.
 %
 % Usage:
 %   >> fooof_version()
+%
+% Notes
+%   This function returns versions of both the installed FOOOF in Python, and of this Matlab wrapper.
+%     The version number of the Matlab FOOOF wrapper is defined in this function.
 
 function fooof_version()
 

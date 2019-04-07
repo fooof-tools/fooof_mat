@@ -13,11 +13,13 @@
 function fooof_plot(fooof_results, log_freqs)
 
     %% Data Checking
+
     if ~isfield(fooof_results, 'freqs')
        error('FOOOF results struct does not contain model output.')
     end
 
     %% Set Up
+
     if exist('log_freqs', 'var') && log_freqs
         plt_freqs = log10(fooof_results.freqs);
     else
@@ -27,16 +29,16 @@ function fooof_plot(fooof_results, log_freqs)
     % Plot settings
     lw = 2.5;
 
-    %% Create the Plots
+    %% Create the plots
 
     figure()
     hold on
+
     % Plot the original data
     data = plot(plt_freqs, fooof_results.power_spectrum, 'black');
 
     % Plot the full model fit
     model = plot(plt_freqs, fooof_results.fooofed_spectrum, 'red');
-
 
     % Plot the aperiodic fit
     ap_fit = plot(plt_freqs, fooof_results.ap_fit, 'b--');
