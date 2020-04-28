@@ -1,4 +1,4 @@
-% fooof_group() run the fooof model on a group of neural power spectra
+% fooof_group() - Run the fooof model on a group of neural power spectra.
 %
 % Usage:
 %   fooof_results = fooof_group(freqs, psds, f_range, settings);

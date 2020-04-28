@@ -58,6 +58,16 @@ function fooof_results = fooof(freqs, power_spectrum, f_range, settings, return_
     % Extract outputs
     fooof_results = fm.get_results();
     fooof_results = fooof_unpack_results(fooof_results);
+    
+    % Re-calculating r-squared
+    %   r_squared doesn't seem to get computed properly (in NaN).
+    %   It is unclear why this happens, other than the error can be traced
+    %   back to the internal call to `np.cov`, and fails when this function
+    %   gets two arrays as input.
+    %   Therefore, we can simply recalculate r-squared
+    coefs = corrcoef(double(py.array.array('d', fm.power_spectrum)), ...
+                     double(py.array.array('d', fm.fooofed_spectrum_)));
+    fooof_results.r_squared = coefs(2);
 
     % Also return the actual model fit, if requested
     %   This will default to not return model, if variable not set

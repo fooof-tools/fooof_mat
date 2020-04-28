@@ -1,4 +1,4 @@
-% fooof_plot() - plot a FOOOF model output
+% fooof_plot() - Plot a FOOOF model.
 %
 % Usage:
 %   >> fooof_plot(fooof_results)

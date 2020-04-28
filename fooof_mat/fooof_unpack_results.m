@@ -36,12 +36,9 @@ function results_out = fooof_unpack_results(results_in)
     results_out.error = ...
         double(py.array.array('d', py.numpy.nditer(results_in.error)));
 
-    results_out.r_squared = results_in.r_squared;
-
-    % Note: r_squared seems to come out as float, and does not need type casting
-    %   It is not clear why this value is different
-    %   Just in case, the code for type casting is commented out below:
+    % Note: r_squared gets recalculated, so doesn't need type casting
+    %   Just in case, the code for type casting is:
     %results_out.r_squared = ...
     %    double(py.array.array('d', py.numpy.nditer(results_in.r_squared)));
-
+    
 end
