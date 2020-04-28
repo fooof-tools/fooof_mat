@@ -1,4 +1,4 @@
-% fooof_group() run the fooof model on a group of neural power spectra
+% fooof_group() - Run the fooof model on a group of neural power spectra.
 %
 % Usage:
 %   fooof_results = fooof_group(freqs, psds, f_range, settings);
@@ -10,14 +10,14 @@
 %   settings        = fooof model settings, in a struct, including:
 %       settings.peak_width_limts
 %       settings.max_n_peaks
-%       settings.min_peak_amplitude
+%       settings.min_peak_height
 %       settings.peak_threshold
-%       settings.background_mode
+%       settings.aperiodic_mode
 %       settings.verbose
 %
 % Outputs:
 %   fooof_results   = fooof model ouputs, in a struct, including:
-%       fooof_results.background_params
+%       fooof_results.aperiodic_params
 %       fooof_results.peak_params
 %       fooof_results.gaussian_params
 %       fooof_results.error

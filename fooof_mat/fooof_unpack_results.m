@@ -8,7 +8,7 @@
 %
 % Outputs:
 %   results_out     = fooof model results, in a struct, including:
-%       results_out.background_params
+%       results_out.aperiodic_params
 %       results_out.peak_params
 %       results_out.gaussian_params
 %       results_out.error
@@ -22,8 +22,8 @@ function results_out = fooof_unpack_results(results_in)
 
     results_out = struct();
 
-    results_out.background_params = ...
-        double(py.array.array('d', results_in.background_params));
+    results_out.aperiodic_params = ...
+        double(py.array.array('d', results_in.aperiodic_params));
 
     temp = double(py.array.array('d', results_in.peak_params.ravel));
     results_out.peak_params = ...
@@ -36,12 +36,9 @@ function results_out = fooof_unpack_results(results_in)
     results_out.error = ...
         double(py.array.array('d', py.numpy.nditer(results_in.error)));
 
-    results_out.r_squared = results_in.r_squared;
-
-    % Note: r_squared seems to come out as float, and does not need type casting
-    %   It is not clear why this value is different
-    %   Just in case, the code for type casting is commented out below:
+    % Note: r_squared gets recalculated, so doesn't need type casting
+    %   Just in case, the code for type casting is:
     %results_out.r_squared = ...
     %    double(py.array.array('d', py.numpy.nditer(results_in.r_squared)));
-
+    
 end

@@ -7,18 +7,18 @@
 %   settings        = struct, can optionally include:
 %       settings.peak_width_limts
 %       settings.max_n_peaks
-%       settings.min_peak_amplitude
+%       settings.min_peak_height
 %       settings.peak_threshold
-%       settings.background_mode
+%       settings.aperiodic_mode
 %       settings.verbose
 %
 % Outputs:
 %   settings        = struct, with all settings defined:
 %       settings.peak_width_limts
 %       settings.max_n_peaks
-%       settings.min_peak_amplitude
+%       settings.min_peak_height
 %       settings.peak_threshold
-%       settings.background_mode
+%       settings.aperiodic_mode
 %       settings.verbose
 %
 % Notes:
@@ -31,9 +31,9 @@ function settings = fooof_check_settings(settings)
     defaults = struct(...
         'peak_width_limits', [0.5, 12], ...
         'max_n_peaks', Inf, ...
-        'min_peak_amplitude', 0.0, ...
+        'min_peak_height', 0.0, ...
         'peak_threshold', 2.0, ...
-        'background_mode', 'fixed', ...
+        'aperiodic_mode', 'fixed', ...
         'verbose', true);
 
     % Overwrite any non-existent or nan settings with defaults

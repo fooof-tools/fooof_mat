@@ -1,4 +1,4 @@
-% fooof_plot() - plot a FOOOF model output
+% fooof_plot() - Plot a FOOOF model.
 %
 % Usage:
 %   >> fooof_plot(fooof_results)
@@ -40,13 +40,13 @@ function fooof_plot(fooof_results, log_freqs)
     % Plot the full model fit
     model = plot(plt_freqs, fooof_results.fooofed_spectrum, 'red');
 
-    % Plot the background fit
-    bg_fit = plot(plt_freqs, fooof_results.bg_fit, 'b--');
+    % Plot the aperiodic fit
+    ap_fit = plot(plt_freqs, fooof_results.ap_fit, 'b--');
 
-    %% Plot settings
+    %% Plot Settings
 
     % Apply general plot settings
-    for plt = [data, model, bg_fit]
+    for plt = [data, model, ap_fit]
         set(plt, 'LineWidth', lw);
 
     % Set alpha value for model - in a wonky way, because Matlab
