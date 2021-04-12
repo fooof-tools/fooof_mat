@@ -1,14 +1,19 @@
-# FOOOF - Matlab Wrapper
+# Spectral Parameterization - Matlab Wrapper
 
 This repository offers a Matlab wrapper for [FOOOF](https://github.com/fooof-tools/fooof).
 
-The main documentation for FOOOF is on the [documentation site](https://fooof-tools.github.io/fooof/).
+The main documentation for spectral parameterization is on the [documentation site](https://fooof-tools.github.io/fooof/).
 
 This repository describes the Matlab wrapper, in which you call the Python implementation of FOOOF from Matlab, never having to interact directly with Python.
 
 Note that, as an alternative to using the wrapper from Matlab, you can also try the
 [Matlab->Python->Matlab](https://github.com/fooof-tools/mat_py_mat)
 approach, in which there are examples for using FOOOF, in Python, integrated into a primarily Matlab workflow.
+
+The spectral parameterization algorithm has also been implemented in the 
+[Brainstorm](https://neuroimage.usc.edu/brainstorm/Introduction) Matlab toolbox.  
+You can find out more about the Brainstorm implementation in this 
+[tutorial](https://neuroimage.usc.edu/brainstorm/Tutorials/Fooof).
 
 ## FOOOF_MAT
 
