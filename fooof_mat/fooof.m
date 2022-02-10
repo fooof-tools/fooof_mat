@@ -65,20 +65,22 @@ function fooof_results = fooof(freqs, power_spectrum, f_range, settings, return_
     %   back to the internal call to `np.cov`, and fails when this function
     %   gets two arrays as input.
     %   Therefore, we can simply recalculate r-squared
-    coefs = corrcoef(double(py.array.array('d', fm.power_spectrum)), ...
-                     double(py.array.array('d', fm.fooofed_spectrum_)));
-    fooof_results.r_squared = coefs(2);
+    try
+        coefs = corrcoef(double(py.array.array('d', fm.power_spectrum)), ...
+                         double(py.array.array('d', fm.fooofed_spectrum_)));
+        fooof_results.r_squared = coefs(2);
 
-    % Also return the actual model fit, if requested
-    %   This will default to not return model, if variable not set
-    if exist('return_model', 'var') && return_model
-
-        % Get the model, and add outputs to fooof_results
-        model_out = fooof_get_model(fm);
-        for field = fieldnames(model_out)'
-            fooof_results.(field{1}) = model_out.(field{1});
+        %  Also return the actual model fit, if requested
+        %   This will default to not return model, if variable not set
+        if (exist('return_model', 'var') && return_model)
+            % Get the model, and add outputs to fooof_results        
+            model_out = fooof_get_model(fm);
+            for field = fieldnames(model_out)'
+                fooof_results.(field{1}) = model_out.(field{1});
+            end
         end
-
+    catch
+        warning(strcat('Result object contains not all properties.',...
+                       'This may be caused by an failed modle fit.'));
     end
-
 end
