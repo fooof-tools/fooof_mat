@@ -81,6 +81,6 @@ function fooof_results = fooof(freqs, power_spectrum, f_range, settings, return_
         end
     catch
         warning(strcat('Result object contains not all properties.',...
-                       'This may be caused by an failed modle fit.'));
+                       'This may be caused by an failed model fit.'));
     end
 end
