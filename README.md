@@ -1,30 +1,44 @@
-# FOOOF - Matlab Wrapper
+# Spectral Parameterization - Matlab Wrapper
 
-This repository offers a Matlab wrapper for [FOOOF](https://github.com/fooof-tools/fooof).
+This repository offers a Matlab wrapper for [specparam](https://github.com/fooof-tools/fooof).
 
-The main documentation for FOOOF is on the [documentation site](https://fooof-tools.github.io/fooof/).
+The main documentation for spectral parameterization is on the [documentation site](https://fooof-tools.github.io/fooof/).
 
-This repository describes the Matlab wrapper, in which you call the Python implementation of FOOOF from Matlab, never having to interact directly with Python.
+This repository describes the Matlab wrapper, in which you call the Python implementation of FOOOF from Matlab, 
+without having to interact directly with Python. Under the hood, this approach does still use the Python code 
+of the original implemetation. 
 
-Note that, as an alternative to using the wrapper from Matlab, you can also try the
+## Other Matlab Workflows
+
+An alternative to using the wrapper from Matlab, you can also try the
 [Matlab->Python->Matlab](https://github.com/fooof-tools/mat_py_mat)
-approach, in which there are examples for using FOOOF, in Python, integrated into a primarily Matlab workflow.
+approach. In this approach, there are examples of how to spectral parameterization, in Python, 
+integrated into a primarily Matlab workflow.
+
+Alternately, there are also some toolboxes which have integrated the spectral parameterization
+algorithm, including re-implementations such that you don't have to use / install Python. 
+
+The spectral parameterization algorithm has also been implemented in the following Matlab toolboxes:
+- The [Brainstorm](https://neuroimage.usc.edu/brainstorm/Introduction) toolbox, with an associated
+[tutorial](https://neuroimage.usc.edu/brainstorm/Tutorials/Fooof)
+- The [Fieldtrip](https://www.fieldtriptoolbox.org/) toolbox, with an associated
+[tutorial](https://www.fieldtriptoolbox.org/example/fooof/)
 
 ## FOOOF_MAT
 
-The Matlab wrapper is Matlab code that calls the Python implementation of FOOOF. This requires that you have Python & FOOOF installed, but does not require you to ever use or write Python code yourself.
+The Matlab wrapper is Matlab code that calls the Python implementation of fooof. This requires that you have Python & fooof installed, but does not require you to ever use or write Python code yourself.
 
-To use the wrapper, first install Python & FOOOF - there are instructions to do so below. Then clone or download this repository, and use the provided Matlab code to run FOOOF. Typically, the only function you will need to run is 'fooof.m', which has documentation on inputs and outputs.
+To use the wrapper, first install Python & fooof - there are instructions to do so below. Then clone or download this repository, and use the provided Matlab code to do spectral parameterization. Typically, the only function you will need to run is 'fooof.m', which has documentation on inputs and outputs.
 
-Note that this is a very minimal wrapper - it provides access only to the core algorithm, and does not offer access to most of the extra utilities in the Python module. However, since the algorithm is the core purpose of FOOOF, you do have full access to the model itself, including all inputs settings and model outputs.
+Note that this is a very minimal wrapper - it provides access only to the core algorithm, and does not offer access to most of the extra utilities in the Python module. However, since the fitting algorithm is the core purpose of the module, you do have full access to the model itself, including all inputs settings and model outputs.
 
 #### Dependencies
 
 This Matlab wrapper uses the Python support introduced by Matlab in 2014b, and as such requires that version, or higher, to run.
 
-## Installing Python & FOOOF
+## Installing Python & fooof
 
-Both workflows above require that Python & FOOOF be installed. The easiest way to do this is as follows:
+Using the Matlab wrapper and/or the Mat-Py-Mat approach require that Python & fooof be installed. The easiest way to do this is as follows:
 
 #### Install Python
 
@@ -83,14 +97,14 @@ pyversion('/anaconda/bin/python')
 
 ## Reference
 
-If you use this code in your project, please cite:
+If you use this code in your project, please cite::
 
-    Haller M, Donoghue T, Peterson E, Varma P, Sebastian P, Gao R, Noto T, Knight RT, Shestyuk A,
-    Voytek B (2018) Parameterizing Neural Power Spectra. bioRxiv, 299859.
-    doi: https://doi.org/10.1101/299859
+    Donoghue T, Haller M, Peterson EJ, Varma P, Sebastian P, Gao R, Noto T, Lara AH, Wallis JD,
+    Knight RT, Shestyuk A, & Voytek B (2020). Parameterizing neural power spectra into periodic
+    and aperiodic components. Nature Neuroscience, 23, 1655-1665.
+    DOI: 10.1038/s41593-020-00744-x
 
-## Potential Matlab Implementation
+Direct link: https://doi.org/10.1038/s41593-020-00744-x
 
-This Matlab wrapper still uses the Python implementation of FOOOF.
-
-As of right now, there are no plans for us to create a full re-implementation of the algorithm in Matlab, as it is a large project to re-write, test, confirm equivalence, and then continuously maintain two versions.
+More information for how to cite this method can be found on the 
+[reference page](https://fooof-tools.github.io/fooof/reference.html).
